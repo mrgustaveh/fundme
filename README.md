@@ -20,6 +20,12 @@ anvil contract address - 0xa513E6E4b8f2a923D98304ec87F64353C4D5C853
 cast wallet import defaultKey --interactive
 ```
 
+### deploy contract (locally)
+
+```bash
+forge script script/DeployFundme.s.sol --rpc-url http://127.0.0.1:8545 --broadcast --account defaultKey --sender 0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+```
+
 ### fund contract
 
 ```bash
