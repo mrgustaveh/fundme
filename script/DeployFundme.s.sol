@@ -2,7 +2,7 @@
 pragma solidity ^0.8.18;
 
 import {Script} from "../lib/forge-std/src/Script.sol";
-import {FundMe} from "../src/FunMe.sol";
+import {FundMe} from "../src/FundMe.sol";
 
 contract DeployFundMe is Script {
     function run() external returns (FundMe) {
