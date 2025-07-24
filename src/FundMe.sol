@@ -8,7 +8,8 @@ event ReceivedEther(address sender, uint amount);
 
 contract FundMe {
     address public immutable i_owner;
-    uint256 public constant MIN_AMOUNT = 1e14; // 0.0001 ETH
+    uint256 public constant MIN_AMOUNT = 0.0001 ether;
+    mapping (address => uint256) address_to_amount;
 
     constructor() {
         i_owner = msg.sender;
@@ -18,6 +19,7 @@ contract FundMe {
         if (msg.value < MIN_AMOUNT) {
             revert AmountTooLow();
         } else {
+            address_to_amount[msg.sender]=msg.value;
             emit ReceivedEther(msg.sender, msg.value);
         }
     }
